@@ -19,16 +19,11 @@
         p { line-height: 1.8; font-weight: 300; letter-spacing: 0.5px; font-size: 15px; margin-bottom: 20px; }
 
         /* UI Elements */
-        input { background: transparent; border: none; border-bottom: 1px solid #000; padding: 12px 0; width: 260px; text-align: center; font-size: 16px; outline: none; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 4px; border-radius: 0; transition: border-color 0.3s; }
-        input:focus { border-bottom: 1px solid #999; }
+        input { background: transparent; border: none; border-bottom: 1px solid #000; padding: 12px 0; width: 260px; text-align: center; font-size: 16px; outline: none; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 4px; border-radius: 0; }
         button { background: transparent; color: #000; border: 1px solid #000; padding: 18px 60px; cursor: pointer; letter-spacing: 3px; text-transform: uppercase; font-size: 10px; font-weight: bold; transition: all 0.3s; margin-top: 10px; }
         button:hover { background: #000; color: #fff; }
         hr { width: 40px; border: 0; border-top: 1px solid #000; margin: 50px auto; }
         .discover { color: #000; text-decoration: none; border-bottom: 1px solid #000; font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; display: inline-block; padding-bottom: 2px; }
-
-        /* Images */
-        .img-container { width: 100%; height: 300px; background: #f7f7f7; margin-bottom: 40px; overflow: hidden; }
-        .img-container img { width: 100%; height: 100%; object-fit: cover; }
     </style>
 </head>
 <body>
@@ -37,8 +32,8 @@
     
     <div id="view-gateway" class="view active">
         <h1>Project 80</h1>
-        <p>Welcome to the Highlands.<br>Please enter your residence name to begin.</p>
-        <input type="text" id="pass-gateway" placeholder="••••••••" autocomplete="off">
+        <p>Welcome to the Highlands.<br>Please enter your residence name.</p>
+        <input type="text" id="pass-gateway" placeholder="••••••••">
         <br>
         <button onclick="checkGateway()">Enter</button>
     </div>
@@ -46,85 +41,71 @@
     <div id="view-19" class="view">
         <h2>Abernethy Forest</h2>
         <p class="pos">POSITION: PH25 3EF</p>
-        
-        <div class="img-container">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1000&auto=format&fit=crop" alt="Highlands">
-        </div>
-
         <p class="section-label">The Objectives</p>
         <p><strong>Loch Garten Nature Centre</strong><br><span class="pos">PH24 3BY</span><br>
         <a href="https://www.rspb.org.uk/days-out/reserves/loch-garten-abernethy" target="_blank" class="discover">Discover</a></p>
-        
-        <p><strong>An Lochan Uaine</strong><br><span class="pos">PH22 1QU</span></p>
-
+        <p><strong>KJ's Bothy Bakery</strong><br><span class="pos">PH25 3EF</span></p>
         <hr>
-
-        <p class="section-label">The Selection</p>
-        <p><strong>Nethy Bridge Hotel</strong><br><span class="pos">PH25 3DP</span><br>
-        <a href="https://strathmorehotels-nethybridge.com/" target="_blank" class="discover">Discover</a></p>
-
         <button onclick="showView('view-gate-20')">Request Clearance</button>
     </div>
 
     <div id="view-gate-20" class="view">
-        <p class="section-label" style="color: #999;">Identity Protocol</p>
+        <p class="section-label">Identity Protocol</p>
         <p>Identify the oldest resident of the forest.<br>How many years has it been standing?</p>
-        <input type="text" id="pass-20" placeholder="••••" autocomplete="off">
+        <input type="text" id="pass-20" placeholder="••••">
         <br>
-        <button onclick="checkGate20()">Verify Identity</button>
+        <button onclick="checkGate20()">Verify</button>
     </div>
 
     <div id="view-20" class="view">
         <h2>Loch Ness Protocol</h2>
         <p class="pos">POSITION: IV63 6XJ</p>
-        
-        <div class="img-container">
-            <img src="https://images.unsplash.com/photo-1543833077-40098f6a9861?q=80&w=1000&auto=format&fit=crop" alt="Loch Ness">
-        </div>
+        <p>The dossier for April 20 is now decrypted.<br>Scanning for surface anomalies...</p>
+        <hr>
+        <button onclick="showView('view-gate-21')">Next Phase</button>
+    </div>
 
-        <p class="section-label">Intelligence Briefing</p>
-        <p>Protocol for April 20 is now active. <br>Scanning for surface anomalies...</p>
-        
-        <button onclick="showView('view-19')">Return to April 19</button>
+    <div id="view-gate-21" class="view">
+        <p class="section-label">Identity Protocol</p>
+        <p>Enter the security key found at Loch Ness.</p>
+        <input type="text" id="pass-21" placeholder="••••">
+        <br>
+        <button onclick="checkGate21()">Verify</button>
+    </div>
+
+    <div id="view-21" class="view">
+        <h2>Ryvoan Pass</h2>
+        <p class="pos">POSITION: PH22 1QU</p>
+        <p>Phase 3 is active. Proceed to the Green Lochan.</p>
+        <hr>
+        <button onclick="showView('view-gateway')">Return to Start</button>
     </div>
 
 </div>
 
 <script>
-    // Logic to switch between sections
     function showView(viewId) {
         document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
         document.getElementById(viewId).classList.add('active');
         window.scrollTo(0,0);
     }
 
-    // Password Logic
     function checkGateway() {
         let p = document.getElementById('pass-gateway').value.toLowerCase().trim();
-        if (p === 'pine marten lodge' || p === 'pine marten') {
-            showView('view-19');
-        } else {
-            alert('INVALID ENTRY');
-        }
+        if (p === 'pine marten lodge' || p === 'pine marten') showView('view-19');
+        else alert('INVALID ENTRY');
     }
 
     function checkGate20() {
-        let a = document.getElementById('pass-20').value.trim();
-        if (a === '400') {
-            showView('view-20');
-        } else {
-            alert('INVALID ENTRY');
-        }
+        if (document.getElementById('pass-20').value.trim() === '400') showView('view-20');
+        else alert('INVALID ENTRY');
     }
 
-    // Allow 'Enter' key to trigger buttons
-    document.addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
-            let activeView = document.querySelector('.view.active');
-            let btn = activeView.querySelector('button');
-            if (btn) btn.click();
-        }
-    });
+    function checkGate21() {
+        // Example password for the next day
+        if (document.getElementById('pass-21').value.toLowerCase().trim() === 'mountain') showView('view-21');
+        else alert('INVALID ENTRY');
+    }
 </script>
 
 </body>
