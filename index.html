@@ -295,4 +295,105 @@
                 <p class="section-label">Selection</p>
                 <div class="item">
                     <strong>The Dowans Hotel</strong>
-                    <a href="https://www.google.com/maps/search/?api=1&query=AB38+9LS" target="_blank" class
+                    <a href="https://www.google.com/maps/search/?api=1&query=AB38+9LS" target="_blank" class="pos-link">AB38 9LS</a>
+                    <span class="description">Boutique family-run hotel overlooking the heart of Speyside.</span>
+                    <a href="https://www.dowanshotel.com/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+                <div class="item">
+                    <strong>Copper Dog</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=AB38+9SR" target="_blank" class="pos-link">AB38 9SR</a>
+                    <span class="description">The essential pub for an evening dram in the heart of Craigellachie.</span>
+                    <a href="https://www.squaremeal.co.uk/restaurants/copper-dog-at-the-craigellachie-hotel_13306" target="_blank" class="discover-btn">Discover</a>
+                </div>
+                <button onclick="showView('g25')">Request Final Clearance</button>
+                <div class="footer-spacer"></div>
+            </div>
+        </div>
+
+        <div id="v25" class="view">
+            <div class="img-hero"><img src="img/25.jpg" alt=""></div>
+            <div class="content-wrap">
+                <h2>The Return</h2>
+                <div class="weather-intel">Conditions: 12°C // Wind: 10mph W // Precip: 5%</div>
+                <p class="section-label">Objectives</p>
+                <div class="item">
+                    <strong>Landmark Park</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH23+3AJ" target="_blank" class="pos-link">PH23 3AJ</a>
+                    <span class="description">Forest adventure park featuring family-friendly nature trails.</span>
+                    <a href="https://www.visitcairngorms.com/listing/1318/landmark-forest-adventure-park/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+                <div class="item">
+                    <strong>Old Packhorse Bridge</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH23+3AS" target="_blank" class="pos-link">PH23 3AS</a>
+                    <span class="description">The oldest bridge in the Highlands, built in 1717 in Carrbridge.</span>
+                    <a href="https://www.nationaltransporttrust.org.uk/heritage-sites/heritage-detail/carrbridge-packhorse-bridge" target="_blank" class="discover-btn">Discover</a>
+                </div>
+                <div class="item">
+                    <strong>Strathspey Railway</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH22+1PY" target="_blank" class="pos-link">PH22 1PY</a>
+                    <span class="description">A nostalgic steam train journey through the heart of the Cairngorms.</span>
+                    <a href="https://www.strathspeyrailway.co.uk/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+                <p class="section-label">Selection</p>
+                <div class="item">
+                    <strong>The Boat Country Inn</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH24+3BH" target="_blank" class="pos-link">PH24 3BH</a>
+                    <span class="description">A rustic inn and pub perfect for a final Highland celebration.</span>
+                    <a href="https://www.boatcountryinn.com/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+                <div class="item">
+                    <strong>Anderson's Restaurant</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH24+3BN" target="_blank" class="pos-link">PH24 3BN</a>
+                    <span class="description">Award-winning dining in Boat of Garten focusing on local produce.</span>
+                    <a href="https://andersonsrestaurant.co.uk/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+                <hr>
+                <button onclick="localStorage.clear();location.reload();" style="opacity: 0.1; font-size: 8px;">Reset Dossier</button>
+                <div class="footer-spacer"></div>
+            </div>
+        </div>
+
+        <div id="g20" class="view"><div class="content-wrap"><p class="section-label">Protocol Check</p><p>How many years has the oldest forest resident stood?</p><input type="text" id="pass-20" placeholder="••••"><br><button onclick="checkGate('20', '400', 'v20', 'n20')">Verify</button></div></div>
+        <div id="g21" class="view"><div class="content-wrap"><p class="section-label">Protocol Check</p><p>Enter the name of the castle fortress at the loch.</p><input type="text" id="pass-21" placeholder="••••"><br><button onclick="checkGate('21', 'urquhart', 'v21', 'n21')">Verify</button></div></div>
+        <div id="g22" class="view"><div class="content-wrap"><p class="section-label">Protocol Check</p><p>What color is the Lochan Uaine?</p><input type="text" id="pass-22" placeholder="••••"><br><button onclick="checkGate('22', 'green', 'v22', 'n22')">Verify</button></div></div>
+        <div id="g23" class="view"><div class="content-wrap"><p class="section-label">Protocol Check</p><p>What structure sits in the middle of Loch an Eilein?</p><input type="text" id="pass-23" placeholder="••••"><br><button onclick="checkGate('23', 'castle', 'v23', 'n23')">Verify</button></div></div>
+        <div id="g24" class="view"><div class="content-wrap"><p class="section-label">Identity Protocol</p><p>Check the battlefield map in the visitor centre.<br>Which clan occupied the far left flank?</p><input type="text" id="pass-24" placeholder="••••"><br><button onclick="checkGate('24', 'ATHOLL', 'v24', 'n24')">Verify</button></div></div>
+        <div id="g25" class="view"><div class="content-wrap"><p class="section-label">Identity Protocol</p><p>Final Key: Check the whiskey bottle on the lodge shelf.<br>What is the 'Establishment' year?</p><input type="text" id="pass-25" placeholder="••••"><br><button onclick="checkGate('25', '1824', 'v25', 'n25')">Verify</button></div></div>
+    </div>
+
+<script>
+    const navItems = ['19', '20', '21', '22', '23', '24', '25'];
+    window.onload = function() {
+        navItems.forEach(day => {
+            if (localStorage.getItem('p80_unlocked_' + day)) {
+                let el = document.getElementById('n' + day);
+                if (el) el.classList.add('unlocked');
+            }
+        });
+        if (localStorage.getItem('p80_verified')) {
+            document.getElementById('main-nav').style.display = 'block';
+        }
+    };
+    function showView(id) {
+        document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active-link'));
+        document.getElementById(id).classList.add('active');
+        let navId = id.replace('v', 'n');
+        if(document.getElementById(navId)) document.getElementById(navId).classList.add('active-link');
+        window.scrollTo(0,0);
+        document.getElementById('main-nav').style.display = (id === 'v-gate') ? 'none' : 'block';
+    }
+    function checkGate(gateNum, correct, nextView, navId) {
+        let input = document.getElementById('pass-' + (gateNum === 'gate' ? 'gate' : gateNum)).value.toLowerCase().trim();
+        if (input === correct || (gateNum === 'gate' && input === 'pine marten')) {
+            if (gateNum === 'gate') localStorage.setItem('p80_verified', 'true');
+            let day = navId.replace('n', '');
+            localStorage.setItem('p80_unlocked_' + day, 'true');
+            document.getElementById(navId).classList.add('unlocked');
+            showView(nextView);
+        } else { alert('IDENTITY DENIED'); }
+    }
+    document.addEventListener('keypress', (e) => { if (e.key === 'Enter') { let v = document.querySelector('.view.active'); let b = v.querySelector('button'); if (b) b.click(); } });
+</script>
+</body>
+</html>
