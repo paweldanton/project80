@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROJECT 80 // DOSSIER</title>
     <style>
-        :root { --primary: #000; --secondary: #888; --bg: #fff; --accent: #f9f9f9; }
+        :root { --primary: #000; --secondary: #999; --bg: #fff; --accent: #fcfcfc; }
         body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--primary); margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
         
         /* NAVIGATION */
-        header { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #eee; z-index: 1000; display: none; padding: 25px 0; }
+        header { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.98); border-bottom: 1px solid #f0f0f0; z-index: 1000; display: none; padding: 25px 0; }
         nav { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        nav a { text-decoration: none; color: #ddd; font-size: 10px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; padding: 5px 8px; pointer-events: none; transition: 0.3s; }
+        nav a { text-decoration: none; color: #eee; font-size: 10px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; padding: 5px 8px; pointer-events: none; transition: 0.3s; }
         nav a.unlocked { color: var(--secondary); pointer-events: auto; }
         nav a.active-link { color: var(--primary); }
 
@@ -32,21 +32,21 @@
         .img-hero img { width: 100%; height: 100%; object-fit: cover; }
         .item { margin-bottom: 50px; }
         .item strong { display: block; font-size: 16px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
-        .description { font-size: 14px; color: #444; margin-bottom: 15px; display: block; max-width: 450px; margin-left: auto; margin-right: auto; }
+        .description { font-size: 14px; color: #555; margin-bottom: 15px; display: block; max-width: 480px; margin-left: auto; margin-right: auto; }
 
-        /* TEXT BUTTONS (NO OUTLINE) */
+        /* MINIMALIST TEXT BUTTONS (NO OUTLINE, NO UNDERLINE) */
         input { background: transparent; border: none; border-bottom: 1px solid var(--primary); padding: 12px 0; width: 260px; text-align: center; font-size: 16px; outline: none; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 4px; border-radius: 0; }
-        button, .discover-btn { background: none; border: none; color: var(--primary); padding: 10px 20px; cursor: pointer; letter-spacing: 3px; text-transform: uppercase; font-size: 11px; font-weight: bold; text-decoration: underline; text-underline-offset: 6px; transition: 0.3s; margin: 10px 0; display: inline-block; }
+        button, .discover-btn { background: none; border: none; color: var(--primary); padding: 10px 20px; cursor: pointer; letter-spacing: 3px; text-transform: uppercase; font-size: 11px; font-weight: bold; transition: 0.3s; margin: 10px 0; display: inline-block; text-decoration: none; }
         button:hover, .discover-btn:hover { color: var(--secondary); }
         
         .footer-spacer { height: 120px; }
-        .reset-btn { font-size: 9px; color: #ccc; margin-top: 100px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; }
+        .reset-btn { font-size: 9px; color: #ddd; margin-top: 100px; cursor: pointer; text-transform: uppercase; letter-spacing: 2px; border: none; background: none; }
     </style>
 </head>
 <body>
 
     <header id="main-nav">
-        <nav>
+        <nav id="nav-list">
             <a href="#" onclick="showView('v19')" id="n19">19.04</a>
             <a href="#" onclick="showView('v20')" id="n20">20.04</a>
             <a href="#" onclick="showView('v21')" id="n21">21.04</a>
@@ -70,16 +70,16 @@
         <div id="v19" class="view">
             <h2>Abernethy Forest</h2>
             <span class="pos">PH25 3EF</span>
-            <div class="img-hero"><img src="https://images.unsplash.com/photo-1590424560249-8c682703e33c?q=80&w=1000"></div>
+            <div class="img-hero"><img src="https://source.unsplash.com/1600x900/?forest,scotland" alt="Abernethy"></div>
             
             <p class="section-label">Objectives</p>
-            <div class="item"><strong>Loch Garten</strong><span class="pos">PH24 3BY</span><span class="description">A pristine Caledonian pine forest and home to rare ospreys returning from the African winter.</span><a href="https://www.rspb.org.uk/days-out/reserves/loch-garten-abernethy" target="_blank" class="discover-btn">Discover</a></div>
-            <div class="item"><strong>An Lochan Uaine</strong><span class="pos">PH22 1QU</span><span class="description">The Green Lochan, famous for its vivid emerald water which local legend says was dyed by the fairies.</span><a href="https://www.visitscotland.com/info/see-do/an-lochan-uaine-p1450211" target="_blank" class="discover-btn">Discover</a></div>
-            <div class="item"><strong>Ryvoan Bothy</strong><span class="pos">PH22 1QU</span><span class="description">A traditional mountain shelter nestled in the Ryvoan Pass, serving as a gateway to the high Cairngorms.</span><a href="https://www.mountainbothies.org.uk/bothies/central-highlands/ryvoan/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="item"><strong>Loch Garten</strong><span class="pos">PH24 3BY</span><span class="description">A pristine Caledonian pine forest home to the legendary ospreys.</span><a href="https://www.rspb.org.uk/days-out/reserves/loch-garten-abernethy" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="item"><strong>An Lochan Uaine</strong><span class="pos">PH22 1QU</span><span class="description">The Green Lochan, hidden in the pines with fairy-tale emerald waters.</span><a href="https://www.visitscotland.com/info/see-do/an-lochan-uaine-p1450211" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="item"><strong>Ryvoan Bothy</strong><span class="pos">PH22 1QU</span><span class="description">A high-altitude stone shelter marking the gateway to the deep wilderness.</span><a href="https://www.mountainbothies.org.uk/bothies/central-highlands/ryvoan/" target="_blank" class="discover-btn">Discover</a></div>
             
             <p class="section-label">Selection</p>
-            <div class="item"><strong>Nethy Bridge Hotel</strong><span class="pos">PH25 3DP</span><span class="description">A grand Victorian hotel set in the heart of the village, offering classic Highland hospitality.</span><a href="https://strathmorehotels-nethybridge.com/" target="_blank" class="discover-btn">Discover</a></div>
-            <div class="item"><strong>KJ's Bothy Bakery</strong><span class="pos">PH25 3EF</span><span class="description">Award-winning sourdough and artisan bakes, the essential fuel for any Cairngorm expedition.</span><a href="https://www.bothybakery.com/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="item"><strong>Nethy Bridge Hotel</strong><span class="pos">PH25 3DP</span><span class="description">Historic Victorian architecture offering traditional Highland comfort.</span><a href="https://strathmorehotels-nethybridge.com/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="item"><strong>KJ's Bothy Bakery</strong><span class="pos">PH25 3EF</span><span class="description">The primary source for artisan bakes and expedition fuel.</span><a href="https://www.bothybakery.com/" target="_blank" class="discover-btn">Discover</a></div>
             
             <button onclick="showView('g20')">Request Clearance</button>
         </div>
@@ -95,16 +95,16 @@
         <div id="v20" class="view">
             <h2>Loch Ness Protocol</h2>
             <span class="pos">IV63 6XJ</span>
-            <div class="img-hero"><img src="https://images.unsplash.com/photo-1543833077-40098f6a9861?q=80&w=1000"></div>
+            <div class="img-hero"><img src="https://source.unsplash.com/1600x900/?lochness,castle" alt="Loch Ness"></div>
             
             <p class="section-label">Objectives</p>
-            <div class="item"><strong>Urquhart Castle</strong><span class="pos">IV63 6XJ</span><span class="description">Explore 1,000 years of history at this iconic ruin overlooking the deepest waters of the loch.</span><a href="https://www.historicenvironment.scot/visit-a-place/places/urquhart-castle/" target="_blank" class="discover-btn">Discover</a></div>
-            <div class="item"><strong>Loch Ness Centre</strong><span class="pos">IV63 6TU</span><span class="description">A high-tech investigation into the myths, legends, and geological secrets of Scotland's most famous water.</span><a href="https://lochness.com/" target="_blank" class="discover-btn">Discover</a></div>
-            <div class="item"><strong>Dores Beach</strong><span class="pos">IV2 6TR</span><span class="description">The most cinematic view of the loch's full length, perfect for scanning the horizon for surface anomalies.</span><a href="https://www.visitinvernesslochness.com/explore/villages/dores" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="item"><strong>Urquhart Castle</strong><span class="pos">IV63 6XJ</span><span class="description">Explore 1,000 years of drama at this iconic loch-side fortress.</span><a href="https://www.historicenvironment.scot/visit-a-place/places/urquhart-castle/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="item"><strong>Loch Ness Centre</strong><span class="pos">IV63 6TU</span><span class="description">The scientific epicentre for investigation of the deep waters.</span><a href="https://lochness.com/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="item"><strong>Dores Beach</strong><span class="pos">IV2 6TR</span><span class="description">The full view of the loch, stretching from the edge of the world.</span><a href="https://www.visitinvernesslochness.com/explore/villages/dores" target="_blank" class="discover-btn">Discover</a></div>
             
             <p class="section-label">Selection</p>
-            <div class="item"><strong>The Dores Inn</strong><span class="pos">IV2 6TR</span><span class="description">A charming loch-side retreat offering warming fires and local ales at the water's edge.</span><a href="https://www.thedoresinn.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
-            <div class="item"><strong>Clansman Hotel</strong><span class="pos">IV3 8AU</span><span class="description">Situated directly above the loch, this hotel provides unparalleled access to the northern banks.</span><a href="https://www.lochnessclansmanhotel.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="item"><strong>The Dores Inn</strong><span class="pos">IV2 6TR</span><span class="description">A warm sanctuary offering local ales at the loch's edge.</span><a href="https://www.thedoresinn.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="item"><strong>Clansman Hotel</strong><span class="pos">IV3 8AU</span><span class="description">The only hotel situated directly on the banks of Loch Ness.</span><a href="https://www.lochnessclansmanhotel.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
             
             <button onclick="showView('g21')">Request Clearance</button>
         </div>
@@ -120,49 +120,24 @@
         <div id="v21" class="view">
             <h2>Cairngorm Summit</h2>
             <span class="pos">PH22 1RB</span>
-            <div class="img-hero"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1000"></div>
+            <div class="img-hero"><img src="https://source.unsplash.com/1600x900/?mountain,snow" alt="Cairngorm"></div>
             
             <p class="section-label">Objectives</p>
-            <div class="item"><strong>Mountain Railway</strong><span class="pos">PH22 1RB</span><span class="description">Ascend to the highest station in the UK for breathtaking views across the plateau.</span><a href="https://www.cairngormmountain.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
-            <div class="item"><strong>Ptarmigan Restaurant</strong><span class="pos">PH22 1RB</span><span class="description">Dine at 1,097 meters above sea level in the UK's highest panoramic restaurant.</span><a href="https://www.cairngormmountain.co.uk/the-ptarmigan-restaurant/" target="_blank" class="discover-btn">Discover</a></div>
-            <div class="item"><strong>Reindeer Centre</strong><span class="pos">PH22 1QU</span><span class="description">Visit Britain's only free-ranging reindeer herd in their natural mountain habitat.</span><a href="https://www.cairngormreindeer.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="item"><strong>Mountain Railway</strong><span class="pos">PH22 1RB</span><span class="description">The highest train journey in the UK, ascending to the summit plateau.</span><a href="https://www.cairngormmountain.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="item"><strong>Ptarmigan</strong><span class="pos">PH22 1RB</span><span class="description">Dining at the ceiling of the world in the UK's highest restaurant.</span><a href="https://www.cairngormmountain.co.uk/the-ptarmigan-restaurant/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="item"><strong>Reindeer Centre</strong><span class="pos">PH22 1QU</span><span class="description">Britains only free-roaming mountain reindeer herd.</span><a href="https://www.cairngormreindeer.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
             
             <p class="section-label">Selection</p>
-            <div class="item"><strong>Pine Marten Bar</strong><span class="pos">PH22 1RB</span><span class="description">A cozy après-ski style bar at the base of the mountain, perfect for post-hike refueling.</span><a href="https://www.pinemartenbarscullery.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
-            <div class="item"><strong>Hilton Coylumbridge</strong><span class="pos">PH22 1QN</span><span class="description">Set in 65 acres of woodland, this resort is the ultimate basecamp for forest exploration.</span><a href="https://www.hilton.com/en/hotels/invhchi-hilton-coylumbridge/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="item"><strong>Pine Marten Bar</strong><span class="pos">PH22 1RB</span><span class="description">Cozy alpine refueling station for high-altitude explorers.</span><a href="https://www.pinemartenbarscullery.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="item"><strong>Hilton Coylumbridge</strong><span class="pos">PH22 1QN</span><span class="description">Nestled in the pines at the foot of the mountain range.</span><a href="https://www.hilton.com/en/hotels/invhchi-hilton-coylumbridge/" target="_blank" class="discover-btn">Discover</a></div>
             
             <button onclick="showView('g22')">Request Clearance</button>
         </div>
 
-        <div id="g22" class="view">
-            <p class="section-label">Identity Protocol</p>
-            <p>What color is the Lochan Uaine?</p>
-            <input type="text" id="pass-22" placeholder="••••">
-            <br>
-            <button onclick="checkGate('22', 'green', 'v22', 'n22')">Verify</button>
-        </div>
-
-        <div id="v22" class="view">
-            <h2>Loch an Eilein</h2>
-            <span class="pos">PH22 1QT</span>
-            <div class="img-hero"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1000"></div>
-            
-            <p class="section-label">Objectives</p>
-            <div class="item"><strong>The Island Ruins</strong><span class="pos">PH22 1QT</span><span class="description">Witness the remains of a 13th-century stronghold built by the 'Wolf of Badenoch' on a natural island.</span><a href="https://rothiemurchus.net/visit/loch-an-eilein/" target="_blank" class="discover-btn">Discover</a></div>
-            <div class="item"><strong>Rothiemurchus Centre</strong><span class="pos">PH22 1QH</span><span class="description">The gateway to one of the most beautiful estates in Scotland, offering bespoke outdoor activities.</span><a href="https://rothiemurchus.net/" target="_blank" class="discover-btn">Discover</a></div>
-            <div class="item"><strong>TreeZone Adventure</strong><span class="pos">PH22 1QH</span><span class="description">A high-ropes aerial challenge set within the towering pines of the Rothiemurchus forest.</span><a href="https://treezone.co.uk/aviemore/" target="_blank" class="discover-btn">Discover</a></div>
-            
-            <p class="section-label">Selection</p>
-            <div class="item"><strong>Old Logie Baird</strong><span class="pos">PH22 1RH</span><span class="description">A sophisticated lounge and bar dedicated to local craft spirits and fine Highland malts.</span><a href="https://theoldlogiebaird.com/" target="_blank" class="discover-btn">Discover</a></div>
-            <div class="item"><strong>Farm Shop</strong><span class="pos">PH22 1QH</span><span class="description">Gourmet local venison, beef, and honey sourced directly from the surrounding estate lands.</span><a href="https://rothiemurchus.net/shop/" target="_blank" class="discover-btn">Discover</a></div>
-            
-            <button onclick="showView('g23')">Request Clearance</button>
-        </div>
-
         <div id="v25" class="view">
             <h2>Mission Complete</h2>
-            <p>All dossier sections are decrypted. Safe travels in the Highlands.</p>
-            <p class="reset-btn" onclick="resetDossier()">Wipe Data / Restart</p>
+            <p>All dossier levels are decrypted. Project 80 is secure.</p>
+            <button onclick="resetDossier()" class="reset-btn">Reset Terminal Memory</button>
         </div>
 
         <div class="footer-spacer"></div>
@@ -172,7 +147,6 @@
     const navItems = ['19', '20', '21', '22', '23', '24', '25'];
 
     window.onload = function() {
-        // Restore progress from storage
         navItems.forEach(day => {
             if (localStorage.getItem('p80_unlocked_' + day)) {
                 let el = document.getElementById('n' + day);
@@ -181,8 +155,8 @@
         });
         
         if (localStorage.getItem('p80_verified')) {
-            // If they already logged in, show the first available day or stay on gate
-            // We'll keep them on the gateway for safety unless they click a nav link
+            // Stay on home but allow nav
+            document.getElementById('main-nav').style.display = 'block';
         }
     };
 
@@ -201,28 +175,21 @@
     function checkGate(gateNum, correct, nextView, navId) {
         let input = document.getElementById('pass-' + (gateNum === 'gate' ? 'gate' : gateNum)).value.toLowerCase().trim();
         if (input === correct || (gateNum === 'gate' && input === 'pine marten')) {
-            
             if (gateNum === 'gate') localStorage.setItem('p80_verified', 'true');
-            
-            // Mark nav as unlocked and SAVE to storage
             let day = navId.replace('n', '');
             localStorage.setItem('p80_unlocked_' + day, 'true');
             document.getElementById(navId).classList.add('unlocked');
-            
             showView(nextView);
-        } else {
-            alert('IDENTITY DENIED');
-        }
+        } else { alert('IDENTITY DENIED'); }
     }
 
     function resetDossier() {
-        if(confirm("Permanently wipe all clearance levels and progress?")) {
+        if(confirm("Wipe all dossier clearance levels?")) {
             localStorage.clear();
             location.reload();
         }
     }
 
-    // Support for 'Enter' key
     document.addEventListener('keypress', function (e) {
         if (e.key === 'Enter') {
             let activeView = document.querySelector('.view.active');
