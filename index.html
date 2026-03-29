@@ -8,7 +8,6 @@
         :root { --primary: #000; --secondary: #aaa; --bg: #fff; --accent: #fafafa; --tactical-blue: #0044cc; }
         body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--primary); margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
         
-        /* NAVIGATION */
         header { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.98); z-index: 1000; display: none; padding: 25px 0; border-bottom: 1px solid #f0f0f0; }
         nav { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
         nav a { text-decoration: none; color: #eee; font-size: 10px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; padding: 5px 8px; pointer-events: none; transition: 0.3s; }
@@ -19,14 +18,13 @@
         .active { display: block; animation: fadeIn 0.8s ease forwards; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* 100VH COVER HERO */
-        .img-hero { width: 100%; height: 100vh; background: #000; overflow: hidden; margin: 0; padding: 0; position: relative; }
-        .img-hero img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; }
+        /* CINEMATIC COVER */
+        .img-hero { width: 100%; height: 100vh; background: #000; overflow: hidden; margin: 0; padding: 0; }
+        .img-hero img { width: 100%; height: 100%; object-fit: cover; opacity: 0.95; }
 
         .content-wrap { max-width: 600px; margin: 0 auto; padding: 80px 25px; text-align: center; }
         .flex-center { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
 
-        /* TYPOGRAPHY */
         h1 { letter-spacing: 12px; font-weight: 300; font-size: 22px; text-transform: uppercase; margin: 40px 0; }
         h2 { letter-spacing: 6px; font-weight: 300; font-size: 26px; text-transform: uppercase; margin: 0 0 15px 0; }
         
@@ -41,16 +39,13 @@
         .item strong { display: block; font-size: 16px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
         .description { font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 20px; display: block; }
 
-        /* INPUTS & BUTTONS */
         input { background: transparent; border: none; border-bottom: 1px solid var(--primary); padding: 12px 0; width: 280px; text-align: center; font-size: 16px; outline: none; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 4px; border-radius: 0; display: block; }
         button, .discover-btn { background: none; border: none; color: var(--primary); padding: 10px 20px; cursor: pointer; letter-spacing: 3px; text-transform: uppercase; font-size: 11px; font-weight: bold; transition: 0.3s; margin: 10px 0; display: inline-block; text-decoration: none; }
         button:hover, .discover-btn:hover { color: var(--secondary); }
         
-        .footer-spacer { height: 150px; }
-        
-        /* LIVE STATUS DOT */
         .status-dot { height: 6px; width: 6px; background-color: #00ff00; border-radius: 50%; display: inline-block; margin-right: 8px; animation: pulse 2s infinite; }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+        .footer-spacer { height: 150px; }
     </style>
 </head>
 <body>
@@ -85,41 +80,41 @@
             <div class="img-hero"><img src="img/19.jpg"></div>
             <div class="content-wrap">
                 <h2>Abernethy Forest</h2>
-                <a href="https://www.google.com/maps/search/?api=1&query=PH25+3EF" target="_blank" class="pos-link">PH25 3EF</a>
-                <div class="weather-intel"><span class="status-dot"></span>Conditions: 8°C &nbsp; Wind: 14mph NW &nbsp; Precip: 10%</div>
-                <div class="gear-intel">Tactical: Waterproof Shell &nbsp; Midges Spray &nbsp; Offline Maps</div>
+                <a href="https://www.google.com/maps/search/?api=1&query=PH253EF" target="_blank" class="pos-link">PH25 3EF</a>
+                <div class="weather-intel"><span class="status-dot"></span>Conditions: 8°C     Wind: 14mph NW     Precip: 10%</div>
+                <div class="gear-intel">Tactical: Waterproof Shell     Midges Spray     Offline Maps</div>
 
                 <p class="section-label">Objectives</p>
                 <div class="item">
                     <strong>Loch Garten</strong>
-                    <a href="https://www.google.com/maps/search/?api=1&query=PH24+3BY" target="_blank" class="pos-link">PH24 3BY</a>
-                    <span class="description">Scan the ancient Caledonian pines for resident osprey activity.</span>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH243BY" target="_blank" class="pos-link">PH24 3BY</a>
+                    <span class="description">Ancient Caledonian pine forest and legendary osprey sanctuary.</span>
                     <a href="https://www.rspb.org.uk/days-out/reserves/loch-garten-abernethy" target="_blank" class="discover-btn">Discover</a>
                 </div>
                 <div class="item">
                     <strong>An Lochan Uaine</strong>
-                    <a href="https://www.google.com/maps/search/?api=1&query=PH22+1QU" target="_blank" class="pos-link">PH22 1QU</a>
-                    <span class="description">The Green Lochan. Locate the emerald shoreline via the Ryvoan track.</span>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH221QU" target="_blank" class="pos-link">PH22 1QU</a>
+                    <span class="description">The Green Lochan, a hidden gem with vividly emerald waters.</span>
                     <a href="https://www.visitscotland.com/info/see-do/an-lochan-uaine-p1450211" target="_blank" class="discover-btn">Discover</a>
                 </div>
                 <div class="item">
                     <strong>Ryvoan Bothy</strong>
-                    <a href="https://www.google.com/maps/search/?api=1&query=PH22+1QU" target="_blank" class="pos-link">PH22 1QU</a>
-                    <span class="description">Gateway to the deep wilderness. Note the physical marker at the entrance.</span>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH221QU" target="_blank" class="pos-link">PH22 1QU</a>
+                    <span class="description">Classic mountain shelter marking the gateway to the high wild.</span>
                     <a href="https://www.mountainbothies.org.uk/bothies/central-highlands/ryvoan/" target="_blank" class="discover-btn">Discover</a>
                 </div>
 
                 <p class="section-label">Selection</p>
                 <div class="item">
                     <strong>Nethy Bridge Hotel</strong>
-                    <a href="https://www.google.com/maps/search/?api=1&query=PH25+3DP" target="_blank" class="pos-link">PH25 3DP</a>
-                    <span class="description">Victorian headquarters for tactical Highland exploration.</span>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH253DP" target="_blank" class="pos-link">PH25 3DP</a>
+                    <span class="description">Victorian era grand hotel serving as your tactical base.</span>
                     <a href="https://strathmorehotels-nethybridge.com/" target="_blank" class="discover-btn">Discover</a>
                 </div>
                 <div class="item">
                     <strong>KJ's Bothy Bakery</strong>
-                    <a href="https://www.google.com/maps/search/?api=1&query=PH25+3EF" target="_blank" class="pos-link">PH25 3EF</a>
-                    <span class="description">High-calorie artisan bakes required for summit preparation.</span>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH253EF" target="_blank" class="pos-link">PH25 3EF</a>
+                    <span class="description">Essential artisan bakes and high-calorie fuel for the trek.</span>
                     <a href="https://www.bothybakery.com/" target="_blank" class="discover-btn">Discover</a>
                 </div>
 
@@ -131,34 +126,44 @@
         <div id="v20" class="view">
             <div class="img-hero"><img src="img/20.jpg"></div>
             <div class="content-wrap">
-                <h2>Loch Ness</h2>
-                <a href="https://www.google.com/maps/search/?api=1&query=IV63+6XJ" target="_blank" class="pos-link">IV63 6XJ</a>
-                <div class="weather-intel"><span class="status-dot"></span>Conditions: 7°C &nbsp; Wind: 18mph W &nbsp; Precip: 40%</div>
-                <div class="gear-intel">Tactical: Binoculars &nbsp; Windbreaker &nbsp; Long-range Camera</div>
+                <h2>Loch Ness Protocol</h2>
+                <a href="https://www.google.com/maps/search/?api=1&query=IV636XJ" target="_blank" class="pos-link">IV63 6XJ</a>
+                <div class="weather-intel"><span class="status-dot"></span>Conditions: 7°C     Wind: 18mph W     Precip: 40%</div>
+                <div class="gear-intel">Tactical: Binoculars     Windbreaker     Long-range Camera</div>
 
                 <p class="section-label">Objectives</p>
                 <div class="item">
                     <strong>Urquhart Castle</strong>
-                    <a href="https://www.google.com/maps/search/?api=1&query=IV63+6XJ" target="_blank" class="pos-link">IV63 6XJ</a>
-                    <span class="description"> ruins of a medieval fortress overlooking the Great Glen waters.</span>
+                    <a href="https://www.google.com/maps/search/?api=1&query=IV636XJ" target="_blank" class="pos-link">IV63 6XJ</a>
+                    <span class="description">Medieval fortress ruins overlooking the deep waters of the Great Glen.</span>
                     <a href="https://www.historicenvironment.scot/visit-a-place/places/urquhart-castle/" target="_blank" class="discover-btn">Discover</a>
                 </div>
                 <div class="item">
                     <strong>Loch Ness Centre</strong>
-                    <a href="https://www.google.com/maps/search/?api=1&query=IV63+6TU" target="_blank" class="pos-link">IV63 6TU</a>
-                    <span class="description">Deep-water intelligence and geological surveillance station.</span>
+                    <a href="https://www.google.com/maps/search/?api=1&query=IV636TU" target="_blank" class="pos-link">IV63 6TU</a>
+                    <span class="description">Investigate the geological secrets of the Highlands' most famous loch.</span>
                     <a href="https://lochness.com/" target="_blank" class="discover-btn">Discover</a>
                 </div>
                 <div class="item">
                     <strong>Dores Beach</strong>
-                    <a href="https://www.google.com/maps/search/?api=1&query=IV2+6TR" target="_blank" class="pos-link">IV2 6TR</a>
-                    <span class="description">Optimal shoreline view for surface anomaly detection.</span>
+                    <a href="https://www.google.com/maps/search/?api=1&query=IV26TR" target="_blank" class="pos-link">IV2 6TR</a>
+                    <span class="description">The most cinematic shoreline view available on the loch banks.</span>
                     <a href="https://www.visitinvernesslochness.com/explore/villages/dores" target="_blank" class="discover-btn">Discover</a>
                 </div>
 
                 <p class="section-label">Selection</p>
-                <div class="item"><strong>The Dores Inn</strong><a href="https://www.google.com/maps/search/?api=1&query=IV2+6TR" target="_blank" class="pos-link">IV2 6TR</a><a href="https://www.thedoresinn.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
-                <div class="item"><strong>Clansman Hotel</strong><a href="https://www.google.com/maps/search/?api=1&query=IV3+8AU" target="_blank" class="pos-link">IV3 8AU</a><a href="https://www.lochnessclansmanhotel.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
+                <div class="item">
+                    <strong>The Dores Inn</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=IV26TR" target="_blank" class="pos-link">IV2 6TR</a>
+                    <span class="description">Waterfront retreat offering local ales and fireside comfort.</span>
+                    <a href="https://www.thedoresinn.co.uk/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+                <div class="item">
+                    <strong>Clansman Hotel</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=IV38AU" target="_blank" class="pos-link">IV3 8AU</a>
+                    <span class="description">Directly overlooking the loch with northern access to the Glen.</span>
+                    <a href="https://www.lochnessclansmanhotel.co.uk/" target="_blank" class="discover-btn">Discover</a>
+                </div>
 
                 <button onclick="showView('g21')">Request Clearance 21.04</button>
                 <div class="footer-spacer"></div>
@@ -169,35 +174,184 @@
             <div class="img-hero"><img src="img/21.jpg"></div>
             <div class="content-wrap">
                 <h2>Cairngorm Summit</h2>
-                <a href="https://www.google.com/maps/search/?api=1&query=PH22+1RB" target="_blank" class="pos-link">PH22 1RB</a>
-                <div class="weather-intel"><span class="status-dot"></span>Conditions: 4°C &nbsp; Wind: 25mph W &nbsp; Precip: 20%</div>
-                <div class="gear-intel">Tactical: Thermal Layers &nbsp; Hiking Boots &nbsp; Whistle</div>
+                <a href="https://www.google.com/maps/search/?api=1&query=PH221RB" target="_blank" class="pos-link">PH22 1RB</a>
+                <div class="weather-intel"><span class="status-dot"></span>Conditions: 4°C     Wind: 25mph W     Precip: 20%</div>
+                <div class="gear-intel">Tactical: Thermal Layers     Hiking Boots     Whistle</div>
 
                 <p class="section-label">Objectives</p>
                 <div class="item">
                     <strong>Mountain Railway</strong>
-                    <a href="https://www.google.com/maps/search/?api=1&query=PH22+1RB" target="_blank" class="pos-link">PH22 1RB</a>
-                    <span class="description">Ascend to the highest tactical station in the United Kingdom.</span>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH221RB" target="_blank" class="pos-link">PH22 1RB</a>
+                    <span class="description">The UK's highest railway, ascending the northern slopes of the range.</span>
                     <a href="https://www.cairngormmountain.co.uk/" target="_blank" class="discover-btn">Discover</a>
                 </div>
                 <div class="item">
-                    <strong>Ptarmigan Restaurant</strong>
-                    <a href="https://www.google.com/maps/search/?api=1&query=PH22+1RB" target="_blank" class="pos-link">PH22 1RB</a>
-                    <span class="description">Ceiling-of-Scotland dining. Secure a window-side briefing point.</span>
+                    <strong>Ptarmigan</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH221RB" target="_blank" class="pos-link">PH22 1RB</a>
+                    <span class="description">Dining at 1,097 meters above sea level at the ceiling of Scotland.</span>
                     <a href="https://www.cairngormmountain.co.uk/the-ptarmigan-restaurant/" target="_blank" class="discover-btn">Discover</a>
                 </div>
                 <div class="item">
                     <strong>Reindeer Centre</strong>
-                    <a href="https://www.google.com/maps/search/?api=1&query=PH22+1QU" target="_blank" class="pos-link">PH22 1QU</a>
-                    <span class="description">Surveillance of the only free-ranging mountain herd.</span>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH221QU" target="_blank" class="pos-link">PH22 1QU</a>
+                    <span class="description">Visit the only free-ranging herd of reindeer in Britain.</span>
                     <a href="https://www.cairngormreindeer.co.uk/" target="_blank" class="discover-btn">Discover</a>
                 </div>
 
                 <p class="section-label">Selection</p>
-                <div class="item"><strong>Pine Marten Bar</strong><a href="https://www.pinemartenbarscullery.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
-                <div class="item"><strong>Hilton Coylumbridge</strong><a href="https://www.hilton.com/en/hotels/invhchi-hilton-coylumbridge/" target="_blank" class="discover-btn">Discover</a></div>
+                <div class="item">
+                    <strong>Pine Marten Bar</strong>
+                    <span class="description">Après-ski style bar at the mountain base for post-hike rest.</span>
+                    <a href="https://www.pinemartenbarscullery.co.uk/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+                <div class="item">
+                    <strong>Hilton Coylumbridge</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH221QN" target="_blank" class="pos-link">PH22 1QN</a>
+                    <span class="description">Woodland resort located at the edge of the Cairngorm range.</span>
+                    <a href="https://www.hilton.com/en/hotels/invhchi-hilton-coylumbridge/" target="_blank" class="discover-btn">Discover</a>
+                </div>
 
                 <button onclick="showView('g22')">Request Clearance 22.04</button>
+                <div class="footer-spacer"></div>
+            </div>
+        </div>
+
+        <div id="v22" class="view">
+            <div class="img-hero"><img src="img/22.jpg"></div>
+            <div class="content-wrap">
+                <h2>Loch an Eilein</h2>
+                <a href="https://www.google.com/maps/search/?api=1&query=PH221QT" target="_blank" class="pos-link">PH22 1QT</a>
+                <div class="weather-intel"><span class="status-dot"></span>Conditions: 9°C     Wind: 10mph NW     Precip: 5%</div>
+                <div class="gear-intel">Tactical: Walking Shoes     Insect Repellent     Polars</div>
+
+                <p class="section-label">Objectives</p>
+                <div class="item">
+                    <strong>Island Ruins</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH221QT" target="_blank" class="pos-link">PH22 1QT</a>
+                    <span class="description">13th-century castle ruins sitting in the center of the water.</span>
+                    <a href="https://rothiemurchus.net/visit/loch-an-eilein/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+                <div class="item">
+                    <strong>Rothiemurchus Centre</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH221QH" target="_blank" class="pos-link">PH22 1QH</a>
+                    <span class="description">Gateway to the estate, offering bespoke Highland activities.</span>
+                    <a href="https://rothiemurchus.net/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+                <div class="item">
+                    <strong>TreeZone Adventure</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH221QH" target="_blank" class="pos-link">PH22 1QH</a>
+                    <span class="description">High-ropes challenge set in the towering pines of the estate.</span>
+                    <a href="https://treezone.co.uk/aviemore/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+
+                <p class="section-label">Selection</p>
+                <div class="item">
+                    <strong>Old Logie Baird</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH221RH" target="_blank" class="pos-link">PH22 1RH</a>
+                    <span class="description">Premium Aviemore lounge for fine malts and local gin.</span>
+                    <a href="https://theoldlogiebaird.com/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+                <div class="item">
+                    <strong>Farm Shop</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH221QH" target="_blank" class="pos-link">PH22 1QH</a>
+                    <span class="description">Gourmet local venison and produce direct from the forest.</span>
+                    <a href="https://rothiemurchus.net/shop/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+
+                <button onclick="showView('g23')">Request Clearance 23.04</button>
+                <div class="footer-spacer"></div>
+            </div>
+        </div>
+
+        <div id="v23" class="view">
+            <div class="img-hero"><img src="img/23.jpg"></div>
+            <div class="content-wrap">
+                <h2>Culloden Dossier</h2>
+                <a href="https://www.google.com/maps/search/?api=1&query=IV25EU" target="_blank" class="pos-link">IV2 5EU</a>
+                <div class="weather-intel"><span class="status-dot"></span>Conditions: 10°C     Wind: 15mph W     Precip: 15%</div>
+                <div class="gear-intel">Tactical: Softshell Jacket     Audio Guide     Powerbank</div>
+
+                <p class="section-label">Objectives</p>
+                <div class="item">
+                    <strong>Clava Cairns</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=IV25EU" target="_blank" class="pos-link">IV2 5EU</a>
+                    <span class="description">A well-preserved prehistoric site of burial cairns and standing stones.</span>
+                    <a href="https://www.historicenvironment.scot/visit-a-place/places/clava-cairns/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+                <div class="item">
+                    <strong>The Battlefield</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=IV25EU" target="_blank" class="pos-link">IV2 5EU</a>
+                    <span class="description">The site of the final Jacobite rising. Follow the clan stones.</span>
+                    <a href="https://www.nts.org.uk/visit/places/culloden" target="_blank" class="discover-btn">Discover</a>
+                </div>
+                <div class="item">
+                    <strong>Fort George</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=IV27TD" target="_blank" class="pos-link">IV2 7TD</a>
+                    <span class="description">An 18th-century artillery fortification built after the Battle.</span>
+                    <a href="https://www.historicenvironment.scot/visit-a-place/places/fort-george/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+
+                <p class="section-label">Selection</p>
+                <div class="item">
+                    <strong>Culloden House</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=IV27RR" target="_blank" class="pos-link">IV2 7RR</a>
+                    <span class="description">Luxury estate where Bonnie Prince Charlie stayed before the battle.</span>
+                    <a href="https://cullodenhouse.co.uk/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+                <div class="item">
+                    <strong>The Mustard Seed</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=IV11QH" target="_blank" class="pos-link">IV1 1QH</a>
+                    <span class="description">Highland riverside dining in a converted church building.</span>
+                    <a href="https://www.mustardseedrestaurant.co.uk/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+
+                <button onclick="showView('g24')">Request Clearance 24.04</button>
+                <div class="footer-spacer"></div>
+            </div>
+        </div>
+
+        <div id="v24" class="view">
+            <div class="img-hero"><img src="img/24.jpg"></div>
+            <div class="content-wrap">
+                <h2>Speyside Protocol</h2>
+                <a href="https://www.google.com/maps/search/?api=1&query=AB389RX" target="_blank" class="pos-link">AB38 9RX</a>
+                <div class="weather-intel"><span class="status-dot"></span>Conditions: 11°C     Wind: 12mph W     Precip: 5%</div>
+                <div class="gear-intel">Tactical: Light Jacket     Designated Driver     Glencairn</div>
+
+                <p class="section-label">Objectives</p>
+                <div class="item">
+                    <strong>Ballindalloch</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=AB379AX" target="_blank" class="pos-link">AB37 9AX</a>
+                    <span class="description">The 'Pearl of the North' and one of the finest castles in Speyside.</span>
+                    <a href="https://www.ballindallochcastle.co.uk/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+                <div class="item">
+                    <strong>Glenfarclas</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=AB379BD" target="_blank" class="pos-link">AB37 9BD</a>
+                    <span class="description">Family-owned distillery known for its classic Sherried malts.</span>
+                    <a href="https://glenfarclas.com/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+                <div class="item">
+                    <strong>The Cooperage</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=AB389RS" target="_blank" class="pos-link">AB38 9RS</a>
+                    <span class="description">Witness the ancient craft of barrel making for the world's whiskies.</span>
+                    <a href="https://www.speysidecooperage.co.uk/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+
+                <p class="section-label">Selection</p>
+                <div class="item">
+                    <strong>The Dowans Hotel</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=AB389LS" target="_blank" class="pos-link">AB38 9LS</a>
+                    <span class="description">Boutique family-run hotel overlooking the heart of Speyside.</span>
+                    <a href="https://www.dowanshotel.com/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+                <div class="item">
+                    <strong>Copper Dog</strong>
+                    <span class="description">The essential pub for an evening dram in the heart of Craigellachie.</span>
+                    <a href="https://www.copperdog.com/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+
+                <button onclick="showView('g25')">Request Final Clearance</button>
                 <div class="footer-spacer"></div>
             </div>
         </div>
@@ -206,11 +360,46 @@
             <div class="img-hero"><img src="img/25.jpg"></div>
             <div class="content-wrap">
                 <h2>The Return</h2>
-                <a href="https://www.google.com/maps/search/?api=1&query=PH25+3EF" target="_blank" class="pos-link">PH25 3EF</a>
-                <div class="weather-intel">Mission Status: Complete</div>
-                <div class="gear-intel">Tactical: Summary &nbsp; Final Debrief</div>
+                <a href="https://www.google.com/maps/search/?api=1&query=PH253EF" target="_blank" class="pos-link">PH25 3EF</a>
+                <div class="weather-intel"><span class="status-dot"></span>Conditions: 12°C     Wind: 10mph W     Precip: 5%</div>
+                <div class="gear-intel">Tactical: Comfortable Attire     Summary     Memories</div>
+
+                <p class="section-label">Objectives</p>
+                <div class="item">
+                    <strong>Landmark Park</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH233AJ" target="_blank" class="pos-link">PH23 3AJ</a>
+                    <span class="description">Forest adventure park featuring family-friendly nature trails.</span>
+                    <a href="https://www.landmarkpark.co.uk/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+                <div class="item">
+                    <strong>Packhorse Bridge</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH233AS" target="_blank" class="pos-link">PH23 3AS</a>
+                    <span class="description">The oldest bridge in the Highlands, built in 1717 in Carrbridge.</span>
+                    <a href="https://www.carrbridge.com/about-carrbridge/the-old-packhorse-bridge/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+                <div class="item">
+                    <strong>Strathspey Railway</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH221PY" target="_blank" class="pos-link">PH22 1PY</a>
+                    <span class="description">A nostalgic steam train journey through the heart of the Cairngorms.</span>
+                    <a href="https://www.strathspeyrailway.co.uk/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+
+                <p class="section-label">Selection</p>
+                <div class="item">
+                    <strong>Boat Country Inn</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH243BH" target="_blank" class="pos-link">PH24 3BH</a>
+                    <span class="description">A rustic inn and pub perfect for a final Highland celebration.</span>
+                    <a href="https://www.boatcountryinn.com/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+                <div class="item">
+                    <strong>Anderson's</strong>
+                    <a href="https://www.google.com/maps/search/?api=1&query=PH243BH" target="_blank" class="pos-link">PH24 3BH</a>
+                    <span class="description">Award-winning dining in Boat of Garten focusing on local produce.</span>
+                    <a href="https://www.andersonsrestaurant.co.uk/" target="_blank" class="discover-btn">Discover</a>
+                </div>
+
                 <hr>
-                <button onclick="localStorage.clear();location.reload();" style="opacity: 0.1; font-size: 8px;">Reset Dossier</button>
+                <button onclick="localStorage.clear();location.reload();" style="opacity: 0.1; font-size: 8px;">Reset System</button>
                 <div class="footer-spacer"></div>
             </div>
         </div>
