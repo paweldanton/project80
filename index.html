@@ -3,110 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROJECT 80</title>
+    <title>PROJECT 80 // DOSSIER</title>
     <style>
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #fff; color: #000; margin: 0; display: flex; justify-content: center; padding: 60px 20px; text-align: center; -webkit-font-smoothing: antialiased; }
-        .container { max-width: 600px; width: 100%; }
+        :root { --primary: #000; --secondary: #999; --accent: #f4f4f4; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #fff; color: var(--primary); margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+        
+        /* PERSISTENT NAVIGATION */
+        header { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #eee; z-index: 1000; display: none; padding: 20px 0; }
+        nav { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        nav a { text-decoration: none; color: #ddd; font-size: 10px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; padding: 5px 10px; pointer-events: none; transition: 0.3s; }
+        nav a.unlocked { color: var(--secondary); pointer-events: auto; }
+        nav a.active-link { color: var(--primary); border-bottom: 1px solid var(--primary); }
+
+        .container { max-width: 600px; margin: 120px auto; padding: 20px; text-align: center; }
         .view { display: none; }
-        .active { display: block; animation: fadeIn 0.8s ease forwards; }
+        .active { display: block; animation: fadeIn 0.6s ease-in-out forwards; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* Typography */
-        h1 { letter-spacing: 12px; font-weight: 300; font-size: 22px; text-transform: uppercase; margin-bottom: 80px; }
-        h2 { letter-spacing: 6px; font-weight: 300; font-size: 16px; text-transform: uppercase; margin: 0 0 8px 0; }
-        .pos { font-family: monospace; font-size: 11px; color: #999; letter-spacing: 2px; margin-bottom: 40px; text-transform: uppercase; }
-        .section-label { letter-spacing: 4px; font-size: 11px; font-weight: bold; text-transform: uppercase; margin: 50px 0 25px 0; }
-        p { line-height: 1.8; font-weight: 300; letter-spacing: 0.5px; font-size: 15px; margin-bottom: 20px; }
+        /* TYPOGRAPHY */
+        h1 { letter-spacing: 12px; font-weight: 300; font-size: 20px; text-transform: uppercase; margin-bottom: 60px; }
+        h2 { letter-spacing: 6px; font-weight: 300; font-size: 18px; text-transform: uppercase; margin: 0 0 10px 0; }
+        .pos { font-family: monospace; font-size: 11px; color: var(--secondary); letter-spacing: 2px; margin-bottom: 40px; text-transform: uppercase; }
+        .section-label { letter-spacing: 4px; font-size: 11px; font-weight: bold; text-transform: uppercase; margin: 60px 0 30px 0; border-top: 1px solid #eee; padding-top: 30px; }
+        p { line-height: 1.8; font-weight: 300; letter-spacing: 0.5px; font-size: 15px; margin-bottom: 25px; }
 
-        /* UI Elements */
-        input { background: transparent; border: none; border-bottom: 1px solid #000; padding: 12px 0; width: 260px; text-align: center; font-size: 16px; outline: none; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 4px; border-radius: 0; }
-        button { background: transparent; color: #000; border: 1px solid #000; padding: 18px 60px; cursor: pointer; letter-spacing: 3px; text-transform: uppercase; font-size: 10px; font-weight: bold; transition: all 0.3s; margin-top: 10px; }
-        button:hover { background: #000; color: #fff; }
-        hr { width: 40px; border: 0; border-top: 1px solid #000; margin: 50px auto; }
-        .discover { color: #000; text-decoration: none; border-bottom: 1px solid #000; font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; display: inline-block; padding-bottom: 2px; }
+        /* CONTENT BLOCKS */
+        .img-placeholder { width: 100%; height: 350px; background: var(--accent); margin-bottom: 40px; overflow: hidden; position: relative; }
+        .img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+        .item-box { margin-bottom: 40px; }
+        .item-box strong { display: block; font-size: 16px; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* UI ELEMENTS */
+        input { background: transparent; border: none; border-bottom: 1px solid var(--primary); padding: 12px 0; width: 260px; text-align: center; font-size: 16px; outline: none; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 4px; border-radius: 0; }
+        button { background: transparent; color: var(--primary); border: 1px solid var(--primary); padding: 16px 50px; cursor: pointer; letter-spacing: 3px; text-transform: uppercase; font-size: 10px; font-weight: bold; transition: 0.3s; margin-top: 10px; }
+        button:hover { background: var(--primary); color: #fff; }
+        .discover { color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--primary); font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-top: 5px; }
+        .footer-spacer { height: 100px; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    
-    <div id="view-gateway" class="view active">
-        <h1>Project 80</h1>
-        <p>Welcome to the Highlands.<br>Please enter your residence name.</p>
-        <input type="text" id="pass-gateway" placeholder="••••••••">
-        <br>
-        <button onclick="checkGateway()">Enter</button>
-    </div>
+    <header id="main-nav">
+        <nav id="nav-links">
+            <a href="#" onclick="showView('v19')" id="n19">19.04</a>
+            <a href="#" onclick="showView('v20')" id="n20">20.04</a>
+            <a href="#" onclick="showView('v21')" id="n21">21.04</a>
+            <a href="#" onclick="showView('v22')" id="n22">22.04</a>
+            <a href="#" onclick="showView('v23')" id="n23">23.04</a>
+            <a href="#" onclick="showView('v24')" id="n24">24.04</a>
+            <a href="#" onclick="showView('v25')" id="n25">25.04</a>
+        </nav>
+    </header>
 
-    <div id="view-19" class="view">
-        <h2>Abernethy Forest</h2>
-        <p class="pos">POSITION: PH25 3EF</p>
-        <p class="section-label">The Objectives</p>
-        <p><strong>Loch Garten Nature Centre</strong><br><span class="pos">PH24 3BY</span><br>
-        <a href="https://www.rspb.org.uk/days-out/reserves/loch-garten-abernethy" target="_blank" class="discover">Discover</a></p>
-        <p><strong>KJ's Bothy Bakery</strong><br><span class="pos">PH25 3EF</span></p>
-        <hr>
-        <button onclick="showView('view-gate-20')">Request Clearance</button>
-    </div>
+    <div class="container">
+        
+        <div id="v-gate" class="view active">
+            <h1>Project 80</h1>
+            <p>Identity verification required.<br>Please enter the residence name.</p>
+            <input type="text" id="pass-gate" placeholder="••••••••" autocomplete="off">
+            <br>
+            <button onclick="checkGate('gate', 'pine marten lodge', 'v19', 'n19')">Verify</button>
+        </div>
 
-    <div id="view-gate-20" class="view">
-        <p class="section-label">Identity Protocol</p>
-        <p>Identify the oldest resident of the forest.<br>How many years has it been standing?</p>
-        <input type="text" id="pass-20" placeholder="••••">
-        <br>
-        <button onclick="checkGate20()">Verify</button>
-    </div>
+        <div id="v19" class="view">
+            <h2>Abernethy Forest</h2>
+            <p class="pos">POSITION: PH25 3EF</p>
+            <div class="img-placeholder"><img src="https://images.unsplash.com/photo-1590424560249-8c682703e33c?auto=format&fit=crop&q=80&w=1000"></div>
+            <p class="section-label">Objectives</p>
+            <div class="item-box"><strong>Loch Garten</strong><span class="pos">PH24 3BY</span><a href="https://www.rspb.org.uk/days-out/reserves/loch-garten-abernethy" target="_blank" class="discover">Explore</a></div>
+            <div class="item-box"><strong>An Lochan Uaine</strong><span class="pos">PH22 1QU</span></div>
+            <p class="section-label">Selection</p>
+            <div class="item-box"><strong>Bothy Bakery</strong><span class="pos">PH25 3EF</span></div>
+            <button onclick="showView('g20')">Request Clearance</button>
+        </div>
 
-    <div id="view-20" class="view">
-        <h2>Loch Ness Protocol</h2>
-        <p class="pos">POSITION: IV63 6XJ</p>
-        <p>The dossier for April 20 is now decrypted.<br>Scanning for surface anomalies...</p>
-        <hr>
-        <button onclick="showView('view-gate-21')">Next Phase</button>
-    </div>
+        <div id="g20" class="view">
+            <p class="section-label">Identity protocol</p>
+            <p>How many years has the oldest forest resident stood?</p>
+            <input type="text" id="pass-20" placeholder="••••">
+            <br>
+            <button onclick="checkGate('20', '400', 'v20', 'n20')">Verify</button>
+        </div>
 
-    <div id="view-gate-21" class="view">
-        <p class="section-label">Identity Protocol</p>
-        <p>Enter the security key found at Loch Ness.</p>
-        <input type="text" id="pass-21" placeholder="••••">
-        <br>
-        <button onclick="checkGate21()">Verify</button>
-    </div>
+        <div id="v20" class="view">
+            <h2>Loch Ness Protocol</h2>
+            <p class="pos">POSITION: IV63 6XJ</p>
+            <div class="img-placeholder"><img src="https://images.unsplash.com/photo-1543833077-40098f6a9861?auto=format&fit=crop&q=80&w=1000"></div>
+            <p class="section-label">Objectives</p>
+            <div class="item-box"><strong>Urquhart Castle</strong><span class="pos">IV63 6XJ</span><a href="https://www.historicenvironment.scot/visit-a-place/places/urquhart-castle/" target="_blank" class="discover">Logistics</a></div>
+            <button onclick="showView('g21')">Request Clearance</button>
+        </div>
 
-    <div id="view-21" class="view">
-        <h2>Ryvoan Pass</h2>
-        <p class="pos">POSITION: PH22 1QU</p>
-        <p>Phase 3 is active. Proceed to the Green Lochan.</p>
-        <hr>
-        <button onclick="showView('view-gateway')">Return to Start</button>
-    </div>
+        <div id="g21" class="view">
+            <p class="section-label">Identity protocol</p>
+            <p>Enter the name of the castle fortress at the loch.</p>
+            <input type="text" id="pass-21" placeholder="••••">
+            <br>
+            <button onclick="checkGate('21', 'urquhart', 'v21', 'n21')">Verify</button>
+        </div>
 
-</div>
+        <div id="v21" class="view">
+            <h2>Ryvoan Pass</h2>
+            <p class="pos">POSITION: PH22 1QU</p>
+            <div class="img-placeholder"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000"></div>
+            <p class="section-label">Objectives</p>
+            <p>The Green Lochan Trek. Proceed past the lodge toward the Ryvoan Bothy.</p>
+            <button onclick="showView('g22')">Request Clearance</button>
+        </div>
+
+        <div id="g22" class="view">
+            <p class="section-label">Identity protocol</p>
+            <p>What color is the Lochan Uaine?</p>
+            <input type="text" id="pass-22" placeholder="••••">
+            <br>
+            <button onclick="checkGate('22', 'green', 'v22', 'n22')">Verify</button>
+        </div>
+
+        <div id="v22" class="view">
+            <h2>Loch an Eilein</h2>
+            <p class="pos">POSITION: PH22 1QT</p>
+            <p class="section-label">Objectives</p>
+            <div class="item-box"><strong>The Island Ruins</strong><p>Locate the 13th-century stronghold in the center of the loch.</p></div>
+            <button onclick="showView('g23')">Request Clearance</button>
+        </div>
+
+        <div id="g23" class="view">
+            <p class="section-label">Identity protocol</p>
+            <p>What structure sits in the middle of Loch an Eilein?</p>
+            <input type="text" id="pass-23" placeholder="••••">
+            <br>
+            <button onclick="checkGate('23', 'castle', 'v23', 'n23')">Verify</button>
+        </div>
+
+        <div id="v23" class="view">
+            <h2>Inverness / Culloden</h2>
+            <p class="pos">POSITION: IV2 5EU</p>
+            <p class="section-label">Objectives</p>
+            <div class="item-box"><strong>Clava Cairns</strong><span class="pos">IV2 5EU</span></div>
+            <button onclick="showView('g24')">Request Clearance</button>
+        </div>
+
+        <div id="g24" class="view">
+            <p class="section-label">Identity protocol</p>
+            <p>Enter the name of the battlefield cottage.</p>
+            <input type="text" id="pass-24" placeholder="••••">
+            <br>
+            <button onclick="checkGate('24', 'leanach', 'v24', 'n24')">Verify</button>
+        </div>
+
+        <div id="v24" class="view">
+            <h2>Cairngorm Summit</h2>
+            <p class="pos">POSITION: PH22 1RB</p>
+            <p>High altitude protocol. The final selection is near.</p>
+            <button onclick="showView('g25')">Request Clearance</button>
+        </div>
+
+        <div id="g25" class="view">
+            <p class="section-label">Identity protocol</p>
+            <p>Final Key: Enter the mountain name.</p>
+            <input type="text" id="pass-25" placeholder="••••">
+            <br>
+            <button onclick="checkGate('25', 'cairngorm', 'v25', 'n25')">Verify</button>
+        </div>
+
+        <div id="v25" class="view">
+            <h2>Final Debrief</h2>
+            <p>Project 80 mission complete. Return to base.</p>
+            <hr>
+            <button onclick="showView('v-gate')">Reset Terminal</button>
+        </div>
+
+        <div class="footer-spacer"></div>
+    </div>
 
 <script>
-    function showView(viewId) {
+    function showView(id) {
         document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
-        document.getElementById(viewId).classList.add('active');
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active-link'));
+        document.getElementById(id).classList.add('active');
+        let navId = id.replace('v', 'n');
+        if(document.getElementById(navId)) document.getElementById(navId).classList.add('active-link');
         window.scrollTo(0,0);
+        document.getElementById('main-nav').style.display = (id === 'v-gate') ? 'none' : 'block';
     }
 
-    function checkGateway() {
-        let p = document.getElementById('pass-gateway').value.toLowerCase().trim();
-        if (p === 'pine marten lodge' || p === 'pine marten') showView('view-19');
-        else alert('INVALID ENTRY');
-    }
-
-    function checkGate20() {
-        if (document.getElementById('pass-20').value.trim() === '400') showView('view-20');
-        else alert('INVALID ENTRY');
-    }
-
-    function checkGate21() {
-        // Example password for the next day
-        if (document.getElementById('pass-21').value.toLowerCase().trim() === 'mountain') showView('view-21');
-        else alert('INVALID ENTRY');
+    function checkGate(gateNum, correct, nextView, navId) {
+        let input = document.getElementById('pass-' + gateNum).value.toLowerCase().trim();
+        if (input === correct || (gateNum === 'gate' && input === 'pine marten')) {
+            document.getElementById(navId).classList.add('unlocked');
+            showView(nextView);
+        } else { alert('IDENTITY DENIED'); }
     }
 </script>
-
 </body>
 </html>
