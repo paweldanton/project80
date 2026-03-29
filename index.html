@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROJECT 80 // DOSSIER</title>
     <style>
-        :root { --primary: #000; --secondary: #aaa; --bg: #fff; --accent: #fcfcfc; }
+        :root { --primary: #000; --secondary: #aaa; --bg: #fff; --accent: #fafafa; }
         body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: var(--bg); color: var(--primary); margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
         
-        header { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 1000; display: none; padding: 25px 0; border-bottom: 1px solid #eee; }
+        header { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.98); z-index: 1000; display: none; padding: 25px 0; border-bottom: 1px solid #eee; }
         nav { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
         nav a { text-decoration: none; color: #ddd; font-size: 10px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; padding: 5px 8px; pointer-events: none; transition: 0.3s; }
         nav a.unlocked { color: var(--secondary); pointer-events: auto; }
@@ -18,23 +18,24 @@
         .active { display: block; animation: fadeIn 0.8s ease forwards; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        .img-hero { width: 100%; height: 50vh; background: var(--accent); overflow: hidden; margin-bottom: 60px; }
+        /* CINEMATIC HERO */
+        .img-hero { width: 100%; height: 70vh; background: var(--accent); overflow: hidden; margin: 0; padding: 0; }
         .img-hero img { width: 100%; height: 100%; object-fit: cover; }
-        .content-wrap { max-width: 600px; margin: 0 auto; padding: 0 25px; text-align: center; }
 
-        h1 { letter-spacing: 12px; font-weight: 300; font-size: 22px; text-transform: uppercase; margin: 80px 0; }
+        .content-wrap { max-width: 600px; margin: 0 auto; padding: 60px 25px; text-align: center; }
+
+        h1 { letter-spacing: 12px; font-weight: 300; font-size: 22px; text-transform: uppercase; margin: 40px 0; }
         h2 { letter-spacing: 6px; font-weight: 300; font-size: 20px; text-transform: uppercase; margin: 0 0 10px 0; }
-        .pos { font-family: monospace; font-size: 10px; color: var(--secondary); letter-spacing: 2px; margin-bottom: 40px; text-transform: uppercase; display: block; }
+        .pos { font-family: monospace; font-size: 10px; color: var(--secondary); letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase; display: block; }
+        
+        /* LIVE WEATHER STRIP */
+        .weather-intel { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: #666; margin-bottom: 40px; font-weight: bold; }
+
         .section-label { letter-spacing: 4px; font-size: 10px; font-weight: bold; text-transform: uppercase; margin: 80px 0 40px 0; border-top: 1px solid #eee; padding-top: 40px; }
         
         .item { margin-bottom: 60px; }
         .item strong { display: block; font-size: 15px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
         .description { font-size: 14px; color: #666; line-height: 1.8; margin-bottom: 15px; display: block; }
-
-        /* TACTICAL BAR */
-        .tactical-bar { display: flex; justify-content: center; gap: 20px; margin: 40px 0; }
-        .t-btn { font-size: 9px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; color: #999; transition: 0.3s; }
-        .t-btn:hover { color: #000; }
 
         input { background: transparent; border: none; border-bottom: 1px solid var(--primary); padding: 12px 0; width: 240px; text-align: center; font-size: 16px; outline: none; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 4px; border-radius: 0; }
         button, .discover-btn { background: none; border: none; color: var(--primary); padding: 10px 20px; cursor: pointer; letter-spacing: 3px; text-transform: uppercase; font-size: 11px; font-weight: bold; transition: 0.3s; margin: 10px 0; display: inline-block; text-decoration: none; }
@@ -46,7 +47,7 @@
 <body>
 
     <header id="main-nav">
-        <nav id="nav-list">
+        <nav>
             <a href="#" onclick="showView('v19')" id="n19">19.04</a>
             <a href="#" onclick="showView('v20')" id="n20">20.04</a>
             <a href="#" onclick="showView('v21')" id="n21">21.04</a>
@@ -74,19 +75,16 @@
             <div class="content-wrap">
                 <h2>Abernethy Forest</h2>
                 <span class="pos">57.2435° N, 3.6338° W</span>
-                
-                <div class="tactical-bar">
-                    <a href="https://weather.com/weather/today/l/PH25+3EF" target="_blank" class="t-btn">Intel: Weather</a>
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=PH253EF" target="_blank" class="t-btn">Deploy: Maps</a>
-                    <a href="https://wa.me/?text=Project80:%20Day%201%20Ready" class="t-btn">Comms: WhatsApp</a>
-                </div>
+                <div class="weather-intel">Conditions: 8°C // Wind: 14mph NW // Precip: 10%</div>
 
                 <p class="section-label">Objectives</p>
-                <div class="item"><strong>Loch Garten</strong><span class="description">Primary osprey sanctuary and Caledonian pine core.</span><a href="https://www.rspb.org.uk/days-out/reserves/loch-garten-abernethy" target="_blank" class="discover-btn">Discover</a></div>
-                <div class="item"><strong>An Lochan Uaine</strong><span class="description">Search for the fairy-dyed emerald water.</span></div>
+                <div class="item"><strong>Loch Garten</strong><span class="description">Ancient Caledonian pine forest and legendary osprey sanctuary.</span><a href="https://www.rspb.org.uk/days-out/reserves/loch-garten-abernethy" target="_blank" class="discover-btn">Discover</a></div>
+                <div class="item"><strong>An Lochan Uaine</strong><span class="description">Search for the fairy-dyed emerald water. Follow the Ryvoan track.</span><a href="https://www.visitscotland.com/info/see-do/an-lochan-uaine-p1450211" target="_blank" class="discover-btn">Navigate</a></div>
+                <div class="item"><strong>Ryvoan Bothy</strong><span class="description">Gateway to the deep wilderness. Physical marker check.</span><a href="https://www.mountainbothies.org.uk/bothies/central-highlands/ryvoan/" target="_blank" class="discover-btn">Dossier</a></div>
                 
                 <p class="section-label">Selection</p>
-                <div class="item"><strong>KJ's Bothy Bakery</strong><a href="https://www.bothybakery.com/" target="_blank" class="discover-btn">Discover</a></div>
+                <div class="item"><strong>KJ's Bothy Bakery</strong><a href="https://www.bothybakery.com/" target="_blank" class="discover-btn">Menu</a></div>
+                <div class="item"><strong>Nethy Bridge Hotel</strong><a href="https://strathmorehotels-nethybridge.com/" target="_blank" class="discover-btn">Briefing</a></div>
 
                 <button onclick="showView('g20')">Request Clearance 20.04</button>
                 <div class="footer-spacer"></div>
@@ -108,49 +106,14 @@
             <div class="content-wrap">
                 <h2>Loch Ness</h2>
                 <span class="pos">57.3245° N, 4.4374° W</span>
-                
-                <div class="tactical-bar">
-                    <a href="https://weather.com/weather/today/l/IV63+6XJ" target="_blank" class="t-btn">Intel</a>
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=IV636XJ" target="_blank" class="t-btn">Deploy</a>
-                    <a href="https://wa.me/?text=Project80:%20Loch%20Ness%20Arrival" class="t-btn">Comms</a>
-                </div>
+                <div class="weather-intel">Conditions: 7°C // Wind: 18mph W // Precip: 40%</div>
 
                 <p class="section-label">Objectives</p>
-                <div class="item"><strong>Urquhart Castle</strong><a href="https://www.historicenvironment.scot/visit-a-place/places/urquhart-castle/" target="_blank" class="discover-btn">Discover</a></div>
-                <div class="item"><strong>Dores Beach</strong><span class="description">Optimal surveillance point for surface anomalies.</span></div>
+                <div class="item"><strong>Urquhart Castle</strong><a href="https://www.historicenvironment.scot/visit-a-place/places/urquhart-castle/" target="_blank" class="discover-btn">Navigate</a></div>
+                <div class="item"><strong>Loch Ness Centre</strong><a href="https://lochness.com/" target="_blank" class="discover-btn">Intelligence</a></div>
+                <div class="item"><strong>Dores Beach</strong><span class="description">Optimal surveillance point for surface anomalies.</span><a href="https://www.thedoresinn.co.uk/" target="_blank" class="discover-btn">Selection</a></div>
 
                 <button onclick="showView('g21')">Request Clearance 21.04</button>
-                <div class="footer-spacer"></div>
-            </div>
-        </div>
-
-        <div id="g21" class="view">
-            <div class="content-wrap">
-                <p class="section-label">Identity Protocol</p>
-                <p>Enter the name of the castle fortress at the loch.</p>
-                <input type="text" id="pass-21" placeholder="••••">
-                <br>
-                <button onclick="checkGate('21', 'urquhart', 'v21', 'n21')">Verify</button>
-            </div>
-        </div>
-
-        <div id="v21" class="view">
-            <div class="img-hero"><img src="img/21.jpg" alt=""></div>
-            <div class="content-wrap">
-                <h2>Cairngorm Summit</h2>
-                <span class="pos">57.1169° N, 3.6421° W</span>
-                
-                <div class="tactical-bar">
-                    <a href="https://weather.com/weather/today/l/PH22+1RB" target="_blank" class="t-btn">Intel</a>
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=PH221RB" target="_blank" class="t-btn">Deploy</a>
-                    <a href="https://wa.me/?text=Project80:%20At%20The%20Summit" class="t-btn">Comms</a>
-                </div>
-
-                <p class="section-label">Objectives</p>
-                <div class="item"><strong>Mountain Railway</strong><span class="description">UK's highest ascent protocol.</span></div>
-                <div class="item"><strong>Reindeer Herd</strong><span class="description">Free-range surveillance.</span></div>
-
-                <button onclick="showView('g22')">Request Clearance 22.04</button>
                 <div class="footer-spacer"></div>
             </div>
         </div>
@@ -158,11 +121,10 @@
         <div id="v25" class="view">
             <div class="content-wrap">
                 <h1>Mission Complete</h1>
-                <p>All objectives achieved. Reset terminal for next operative.</p>
+                <p>Dossier encrypted. Safe travels.</p>
                 <button onclick="localStorage.clear();location.reload();" style="opacity: 0.1; font-size: 8px;">Reset</button>
             </div>
         </div>
-
         <div class="footer-spacer"></div>
     </div>
 
