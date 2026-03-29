@@ -5,46 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROJECT 80 // DOSSIER</title>
     <style>
-        :root { --primary: #000; --secondary: #999; --accent: #f4f4f4; }
+        :root { --primary: #000; --secondary: #999; --accent: #f9f9f9; --line: #ececec; }
         body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #fff; color: var(--primary); margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
         
-        /* PERSISTENT NAVIGATION */
-        header { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #eee; z-index: 1000; display: none; padding: 20px 0; }
-        nav { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        nav a { text-decoration: none; color: #ddd; font-size: 10px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; padding: 5px 10px; pointer-events: none; transition: 0.3s; }
+        /* NAVIGATION */
+        header { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); z-index: 1000; display: none; padding: 18px 0; }
+        nav { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        nav a { text-decoration: none; color: #ddd; font-size: 10px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; padding: 5px 8px; pointer-events: none; transition: 0.3s; }
         nav a.unlocked { color: var(--secondary); pointer-events: auto; }
         nav a.active-link { color: var(--primary); border-bottom: 1px solid var(--primary); }
 
-        .container { max-width: 600px; margin: 120px auto; padding: 20px; text-align: center; }
+        .container { max-width: 600px; margin: 100px auto; padding: 20px; text-align: center; }
         .view { display: none; }
-        .active { display: block; animation: fadeIn 0.6s ease-in-out forwards; }
+        .active { display: block; animation: fadeIn 0.5s ease-out; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         /* TYPOGRAPHY */
         h1 { letter-spacing: 12px; font-weight: 300; font-size: 20px; text-transform: uppercase; margin-bottom: 60px; }
         h2 { letter-spacing: 6px; font-weight: 300; font-size: 18px; text-transform: uppercase; margin: 0 0 10px 0; }
-        .pos { font-family: monospace; font-size: 11px; color: var(--secondary); letter-spacing: 2px; margin-bottom: 40px; text-transform: uppercase; }
-        .section-label { letter-spacing: 4px; font-size: 11px; font-weight: bold; text-transform: uppercase; margin: 60px 0 30px 0; border-top: 1px solid #eee; padding-top: 30px; }
-        p { line-height: 1.8; font-weight: 300; letter-spacing: 0.5px; font-size: 15px; margin-bottom: 25px; }
+        .pos { font-family: monospace; font-size: 11px; color: var(--secondary); letter-spacing: 2px; margin-bottom: 30px; text-transform: uppercase; display: block; }
+        .section-label { letter-spacing: 4px; font-size: 11px; font-weight: bold; text-transform: uppercase; margin: 60px 0 30px 0; border-top: 1px solid var(--line); padding-top: 30px; }
+        p { line-height: 1.8; font-weight: 300; letter-spacing: 0.5px; font-size: 15px; margin-bottom: 20px; }
 
         /* CONTENT BLOCKS */
-        .img-placeholder { width: 100%; height: 350px; background: var(--accent); margin-bottom: 40px; overflow: hidden; position: relative; }
-        .img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
-        .item-box { margin-bottom: 40px; }
-        .item-box strong { display: block; font-size: 16px; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* UI ELEMENTS */
-        input { background: transparent; border: none; border-bottom: 1px solid var(--primary); padding: 12px 0; width: 260px; text-align: center; font-size: 16px; outline: none; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 4px; border-radius: 0; }
+        .img-hero { width: 100%; height: 350px; background: var(--accent); margin-bottom: 40px; border: 1px solid var(--line); }
+        .img-hero img { width: 100%; height: 100%; object-fit: cover; }
+        .card { margin-bottom: 45px; text-align: center; }
+        .card strong { display: block; font-size: 15px; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* BUTTONS */
+        input { background: transparent; border: none; border-bottom: 1px solid var(--primary); padding: 12px 0; width: 240px; text-align: center; font-size: 16px; outline: none; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 4px; border-radius: 0; }
         button { background: transparent; color: var(--primary); border: 1px solid var(--primary); padding: 16px 50px; cursor: pointer; letter-spacing: 3px; text-transform: uppercase; font-size: 10px; font-weight: bold; transition: 0.3s; margin-top: 10px; }
         button:hover { background: var(--primary); color: #fff; }
-        .discover { color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--primary); font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-top: 5px; }
-        .footer-spacer { height: 100px; }
+        .discover-btn { color: var(--primary); text-decoration: none; border: 1px solid var(--primary); padding: 8px 20px; font-size: 9px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; display: inline-block; margin-top: 10px; transition: 0.2s; }
+        .discover-btn:hover { background: var(--line); }
+        
+        .footer-spacer { height: 80px; }
     </style>
 </head>
 <body>
 
     <header id="main-nav">
-        <nav id="nav-links">
+        <nav>
             <a href="#" onclick="showView('v19')" id="n19">19.04</a>
             <a href="#" onclick="showView('v20')" id="n20">20.04</a>
             <a href="#" onclick="showView('v21')" id="n21">21.04</a>
@@ -59,7 +61,7 @@
         
         <div id="v-gate" class="view active">
             <h1>Project 80</h1>
-            <p>Identity verification required.<br>Please enter the residence name.</p>
+            <p>Verification Required.<br>Please enter the residence name.</p>
             <input type="text" id="pass-gate" placeholder="••••••••" autocomplete="off">
             <br>
             <button onclick="checkGate('gate', 'pine marten lodge', 'v19', 'n19')">Verify</button>
@@ -67,18 +69,23 @@
 
         <div id="v19" class="view">
             <h2>Abernethy Forest</h2>
-            <p class="pos">POSITION: PH25 3EF</p>
-            <div class="img-placeholder"><img src="https://images.unsplash.com/photo-1590424560249-8c682703e33c?auto=format&fit=crop&q=80&w=1000"></div>
+            <span class="pos">PH25 3EF</span>
+            <div class="img-hero"><img src="https://images.unsplash.com/photo-1590424560249-8c682703e33c?q=80&w=1000"></div>
+            
             <p class="section-label">Objectives</p>
-            <div class="item-box"><strong>Loch Garten</strong><span class="pos">PH24 3BY</span><a href="https://www.rspb.org.uk/days-out/reserves/loch-garten-abernethy" target="_blank" class="discover">Explore</a></div>
-            <div class="item-box"><strong>An Lochan Uaine</strong><span class="pos">PH22 1QU</span></div>
+            <div class="card"><strong>Loch Garten</strong><span class="pos">PH24 3BY</span><a href="https://www.rspb.org.uk/days-out/reserves/loch-garten-abernethy" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="card"><strong>An Lochan Uaine</strong><span class="pos">PH22 1QU</span><a href="https://www.visitscotland.com/info/see-do/an-lochan-uaine-p1450211" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="card"><strong>Ryvoan Bothy</strong><span class="pos">PH22 1QU</span><a href="https://www.mountainbothies.org.uk/bothies/central-highlands/ryvoan/" target="_blank" class="discover-btn">Discover</a></div>
+            
             <p class="section-label">Selection</p>
-            <div class="item-box"><strong>Bothy Bakery</strong><span class="pos">PH25 3EF</span></div>
+            <div class="card"><strong>Nethy Bridge Hotel</strong><span class="pos">PH25 3DP</span><a href="https://strathmorehotels-nethybridge.com/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="card"><strong>KJ's Bothy Bakery</strong><span class="pos">PH25 3EF</span><a href="https://www.bothybakery.com/" target="_blank" class="discover-btn">Discover</a></div>
+            
             <button onclick="showView('g20')">Request Clearance</button>
         </div>
 
         <div id="g20" class="view">
-            <p class="section-label">Identity protocol</p>
+            <p class="section-label">Protocol Check</p>
             <p>How many years has the oldest forest resident stood?</p>
             <input type="text" id="pass-20" placeholder="••••">
             <br>
@@ -87,15 +94,23 @@
 
         <div id="v20" class="view">
             <h2>Loch Ness Protocol</h2>
-            <p class="pos">POSITION: IV63 6XJ</p>
-            <div class="img-placeholder"><img src="https://images.unsplash.com/photo-1543833077-40098f6a9861?auto=format&fit=crop&q=80&w=1000"></div>
+            <span class="pos">IV63 6XJ</span>
+            <div class="img-hero"><img src="https://images.unsplash.com/photo-1543833077-40098f6a9861?q=80&w=1000"></div>
+            
             <p class="section-label">Objectives</p>
-            <div class="item-box"><strong>Urquhart Castle</strong><span class="pos">IV63 6XJ</span><a href="https://www.historicenvironment.scot/visit-a-place/places/urquhart-castle/" target="_blank" class="discover">Logistics</a></div>
+            <div class="card"><strong>Urquhart Castle</strong><span class="pos">IV63 6XJ</span><a href="https://www.historicenvironment.scot/visit-a-place/places/urquhart-castle/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="card"><strong>Loch Ness Centre</strong><span class="pos">IV63 6TU</span><a href="https://lochness.com/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="card"><strong>Dores Beach</strong><span class="pos">IV2 6TR</span><a href="https://www.visitinvernesslochness.com/explore/villages/dores" target="_blank" class="discover-btn">Discover</a></div>
+            
+            <p class="section-label">Selection</p>
+            <div class="card"><strong>The Dores Inn</strong><span class="pos">IV2 6TR</span><a href="https://www.thedoresinn.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="card"><strong>Loch Ness Clansman</strong><span class="pos">IV3 8AU</span><a href="https://www.lochnessclansmanhotel.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
+            
             <button onclick="showView('g21')">Request Clearance</button>
         </div>
 
         <div id="g21" class="view">
-            <p class="section-label">Identity protocol</p>
+            <p class="section-label">Protocol Check</p>
             <p>Enter the name of the castle fortress at the loch.</p>
             <input type="text" id="pass-21" placeholder="••••">
             <br>
@@ -103,16 +118,24 @@
         </div>
 
         <div id="v21" class="view">
-            <h2>Ryvoan Pass</h2>
-            <p class="pos">POSITION: PH22 1QU</p>
-            <div class="img-placeholder"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000"></div>
+            <h2>Cairngorm Summit</h2>
+            <span class="pos">PH22 1RB</span>
+            <div class="img-hero"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1000"></div>
+            
             <p class="section-label">Objectives</p>
-            <p>The Green Lochan Trek. Proceed past the lodge toward the Ryvoan Bothy.</p>
+            <div class="card"><strong>Mountain Railway</strong><span class="pos">PH22 1RB</span><a href="https://www.cairngormmountain.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="card"><strong>Ptarmigan Restaurant</strong><span class="pos">PH22 1RB</span><a href="https://www.cairngormmountain.co.uk/the-ptarmigan-restaurant/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="card"><strong>Reindeer Centre</strong><span class="pos">PH22 1QU</span><a href="https://www.cairngormreindeer.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
+            
+            <p class="section-label">Selection</p>
+            <div class="card"><strong>Pine Marten Bar</strong><span class="pos">PH22 1RB</span><a href="https://www.pinemartenbarscullery.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="card"><strong>Hilton Coylumbridge</strong><span class="pos">PH22 1QN</span><a href="https://www.hilton.com/en/hotels/invhchi-hilton-coylumbridge/" target="_blank" class="discover-btn">Discover</a></div>
+            
             <button onclick="showView('g22')">Request Clearance</button>
         </div>
 
         <div id="g22" class="view">
-            <p class="section-label">Identity protocol</p>
+            <p class="section-label">Protocol Check</p>
             <p>What color is the Lochan Uaine?</p>
             <input type="text" id="pass-22" placeholder="••••">
             <br>
@@ -121,14 +144,23 @@
 
         <div id="v22" class="view">
             <h2>Loch an Eilein</h2>
-            <p class="pos">POSITION: PH22 1QT</p>
+            <span class="pos">PH22 1QT</span>
+            <div class="img-hero"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1000"></div>
+            
             <p class="section-label">Objectives</p>
-            <div class="item-box"><strong>The Island Ruins</strong><p>Locate the 13th-century stronghold in the center of the loch.</p></div>
+            <div class="card"><strong>The Island Ruins</strong><span class="pos">PH22 1QT</span><a href="https://rothiemurchus.net/visit/loch-an-eilein/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="card"><strong>Rothiemurchus Centre</strong><span class="pos">PH22 1QH</span><a href="https://rothiemurchus.net/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="card"><strong>TreeZone Adventure</strong><span class="pos">PH22 1QH</span><a href="https://treezone.co.uk/aviemore/" target="_blank" class="discover-btn">Discover</a></div>
+            
+            <p class="section-label">Selection</p>
+            <div class="card"><strong>Old Logie Baird</strong><span class="pos">PH22 1RH</span><a href="https://theoldlogiebaird.com/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="card"><strong>Rothiemurchus Farm Shop</strong><span class="pos">PH22 1QH</span><a href="https://rothiemurchus.net/shop/" target="_blank" class="discover-btn">Discover</a></div>
+            
             <button onclick="showView('g23')">Request Clearance</button>
         </div>
 
         <div id="g23" class="view">
-            <p class="section-label">Identity protocol</p>
+            <p class="section-label">Protocol Check</p>
             <p>What structure sits in the middle of Loch an Eilein?</p>
             <input type="text" id="pass-23" placeholder="••••">
             <br>
@@ -136,15 +168,24 @@
         </div>
 
         <div id="v23" class="view">
-            <h2>Inverness / Culloden</h2>
-            <p class="pos">POSITION: IV2 5EU</p>
+            <h2>Culloden Dossier</h2>
+            <span class="pos">IV2 5EU</span>
+            <div class="img-hero"><img src="https://images.unsplash.com/photo-1549247600-746a394f4699?q=80&w=1000"></div>
+            
             <p class="section-label">Objectives</p>
-            <div class="item-box"><strong>Clava Cairns</strong><span class="pos">IV2 5EU</span></div>
+            <div class="card"><strong>Clava Cairns</strong><span class="pos">IV2 5EU</span><a href="https://www.historicenvironment.scot/visit-a-place/places/clava-cairns/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="card"><strong>Culloden Battlefield</strong><span class="pos">IV2 5EU</span><a href="https://www.nts.org.uk/visit/places/culloden" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="card"><strong>Fort George</strong><span class="pos">IV2 7TD</span><a href="https://www.historicenvironment.scot/visit-a-place/places/fort-george/" target="_blank" class="discover-btn">Discover</a></div>
+            
+            <p class="section-label">Selection</p>
+            <div class="card"><strong>Culloden House</strong><span class="pos">IV2 7RR</span><a href="https://cullodenhouse.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="card"><strong>The Mustard Seed</strong><span class="pos">IV1 1QH</span><a href="https://www.mustardseedrestaurant.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
+            
             <button onclick="showView('g24')">Request Clearance</button>
         </div>
 
         <div id="g24" class="view">
-            <p class="section-label">Identity protocol</p>
+            <p class="section-label">Protocol Check</p>
             <p>Enter the name of the battlefield cottage.</p>
             <input type="text" id="pass-24" placeholder="••••">
             <br>
@@ -152,23 +193,44 @@
         </div>
 
         <div id="v24" class="view">
-            <h2>Cairngorm Summit</h2>
-            <p class="pos">POSITION: PH22 1RB</p>
-            <p>High altitude protocol. The final selection is near.</p>
+            <h2>Speyside Protocol</h2>
+            <span class="pos">AB38 9RX</span>
+            <div class="img-hero"><img src="https://images.unsplash.com/photo-1527137342181-19aab11a8ee1?q=80&w=1000"></div>
+            
+            <p class="section-label">Objectives</p>
+            <div class="card"><strong>Ballindalloch Castle</strong><span class="pos">AB37 9AX</span><a href="https://www.ballindallochcastle.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="card"><strong>Glenfarclas Distillery</strong><span class="pos">AB37 9BD</span><a href="https://glenfarclas.com/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="card"><strong>Speyside Cooperage</strong><span class="pos">AB38 9RS</span><a href="https://www.speysidecooperage.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
+            
+            <p class="section-label">Selection</p>
+            <div class="card"><strong>The Dowans Hotel</strong><span class="pos">AB38 9LS</span><a href="https://www.dowanshotel.com/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="card"><strong>Copper Dog</strong><span class="pos">AB38 9RS</span><a href="https://www.copperdog.com/" target="_blank" class="discover-btn">Discover</a></div>
+            
             <button onclick="showView('g25')">Request Clearance</button>
         </div>
 
         <div id="g25" class="view">
-            <p class="section-label">Identity protocol</p>
-            <p>Final Key: Enter the mountain name.</p>
+            <p class="section-label">Protocol Check</p>
+            <p>Final Key: Enter the mountain range name.</p>
             <input type="text" id="pass-25" placeholder="••••">
             <br>
-            <button onclick="checkGate('25', 'cairngorm', 'v25', 'n25')">Verify</button>
+            <button onclick="checkGate('25', 'cairngorms', 'v25', 'n25')">Verify</button>
         </div>
 
         <div id="v25" class="view">
-            <h2>Final Debrief</h2>
-            <p>Project 80 mission complete. Return to base.</p>
+            <h2>Mission Complete</h2>
+            <span class="pos">PH25 3EF</span>
+            <div class="img-hero"><img src="https://images.unsplash.com/photo-1533575770077-052fa2cba0c0?q=80&w=1000"></div>
+            
+            <p class="section-label">Objectives</p>
+            <div class="card"><strong>Landmark Forest Park</strong><span class="pos">PH23 3AJ</span><a href="https://www.landmarkpark.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="card"><strong>Carrbridge Bridge</strong><span class="pos">PH23 3AS</span><a href="https://www.carrbridge.com/about-carrbridge/the-old-packhorse-bridge/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="card"><strong>Steam Train</strong><span class="pos">PH22 1PY</span><a href="https://www.strathspeyrailway.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
+            
+            <p class="section-label">Selection</p>
+            <div class="card"><strong>The Boat Country Inn</strong><span class="pos">PH24 3BH</span><a href="https://www.boatcountryinn.com/" target="_blank" class="discover-btn">Discover</a></div>
+            <div class="card"><strong>Anderson's Restaurant</strong><span class="pos">PH24 3BH</span><a href="https://www.andersonsrestaurant.co.uk/" target="_blank" class="discover-btn">Discover</a></div>
+            
             <hr>
             <button onclick="showView('v-gate')">Reset Terminal</button>
         </div>
